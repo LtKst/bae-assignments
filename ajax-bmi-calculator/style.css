@@ -1,0 +1,56 @@
+body {
+    background-color: #171d1d;
+    color: white;
+    text-align: center;
+}
+
+.container-daddy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 500px;
+    border: 1px white solid;
+    padding: 5px;
+    background-color: #171d1d;
+}
+
+
+/* unvisited link */
+
+a:link {
+    color: white;
+}
+
+
+/* visited link */
+
+a:visited {
+    color: lightgray;
+}
+
+
+/* mouse over link */
+
+a:hover {
+    color: darkgray;
+}
+
+.required {
+    color: red;
+}
+
+.circle {
+    /*background-color: red;*/
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    
+    vertical-align: middle;
+    
+    margin-right: 5px;
+    
+    display: inline-block;
+}
