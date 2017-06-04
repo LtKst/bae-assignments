@@ -17,22 +17,13 @@ body {
     background-color: #171d1d;
 }
 
-
-/* unvisited link */
-
 a:link {
     color: white;
 }
 
-
-/* visited link */
-
 a:visited {
     color: lightgray;
 }
-
-
-/* mouse over link */
 
 a:hover {
     color: darkgray;

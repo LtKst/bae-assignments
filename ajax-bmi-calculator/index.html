@@ -3,31 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>PHP BMI Calculator ~ Koen Sparreboom ~ GD1A</title>
+    <title>AJAX PHP BMI Calculator ~ Koen Sparreboom ~ GD1A</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 
     <script>
-        function showHint(str, type) {
-            if (str.length == 0)
-            {
-                document.getElementById("txtHint").innerHTML = "";
-                return;
-            }
-            else
-            {
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function()
-                {
-                    if (this.readyState == 4 && this.status == 200)
-                    {
-                        document.getElementById("txtHint").innerHTML = this.responseText;
-                    }
-                };
-                
-                xmlhttp.open("GET", "getresult.php?q=" + str + "&t=" + type, true);
-                xmlhttp.send();
-            }
+        function calculateBMI() {
+            name = document.getElementById("name").value;
+            length = document.getElementById("length").value;
+            weight = document.getElementById("weight").value;
+
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("bmiResult").innerHTML = this.responseText;
+                }
+            };
+
+            xmlhttp.open("GET", "getresult.php?n=" + name + "&l=" + length + "&w=" + weight, true);
+            xmlhttp.send();
         }
+
     </script>
 </head>
 
@@ -37,21 +32,26 @@
             <h1>Bereken uw <a href="https://nl.wikipedia.org/wiki/Queteletindex" target="_new">body mass index (BMI)</a></h1>
             <h2><span class="required">*</span> betekent dat het veld verplicht is</h2>
 
+            <hr>
+
             <form>
+                <br>
                 <span class="required">* </span>Wat is uw naam?
                 <br>
-                <input id="name" type="text" onkeyup="showHint(this.value)">
+                <input id="name" type="text" onkeyup="calculateBMI()">
                 <hr>
-                <br> <span class="required">* </span> Wat is uw lengte in CM?
                 <br>
-                <input id="length" type="number" onkeyup="showHint(this.value)">
-                <hr>
-                <br> <span class="required">* </span> Wat is uw gewicht in hele kilogrammen?
+                <span class="required">* </span>Wat is uw lengte in CM?
                 <br>
-                <input id="weight" type="number" onkeyup="showHint(this.value)">
+                <input id="length" type="text" onkeyup="calculateBMI()">
                 <hr>
-                
-                <span id="txtHint">Please fill in the necessary information</span>
+                <br>
+                <span class="required">* </span>Wat is uw gewicht in hele kilogrammen?
+                <br>
+                <input id="weight" type="text" onkeyup="calculateBMI()">
+                <hr>
+
+                <span id="bmiResult">Please fill in the necessary information</span>
             </form>
         </div>
     </div>
