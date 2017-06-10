@@ -51,8 +51,9 @@
 	  <head>
 		<meta charset="utf-8">
 		<title>functions</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<style type="text/css">
-				body 	{background-color:silver; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+				body 	{background-color:#1d1f21; font-family: 'Roboto', sans-serif; color:white;}
 				input   {color:blue;}
 				p    	{color:green;font-weight: bold;}
 				legend  {color:blue; font-size: 200%;}
